@@ -1,23 +1,38 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+    <TopMenu></TopMenu>
+    <SideMenu></SideMenu>
+    <div class="wrapper">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
+import SideMenu from '@/components/SideMenu'
+import TopMenu from '@/components/TopMenu'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    SideMenu,
+    TopMenu
+  }
 }
 </script>
 
 <style>
+body {
+  margin: 0;
+}
+
+.wrapper {
+  margin-left: 200px;
+  padding: 15px;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
