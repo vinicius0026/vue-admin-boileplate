@@ -1,6 +1,6 @@
 {
   "name": "vue-admin-boilerplate",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Vue.js Admin Boilerplate",
   "author": "Vinicius Teixeira <vinicius0026@gmail.com>",
   "private": true,
@@ -15,7 +15,8 @@
     "bulma": "^0.4.0",
     "font-awesome": "^4.7.0",
     "vue": "^2.2.2",
-    "vue-router": "^2.2.0"
+    "vue-router": "^2.2.0",
+    "vuex": "^2.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
