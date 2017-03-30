@@ -1,23 +1,35 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+    <Navbar :show="true"></Navbar>
+    <Sidebar :show="true"></Sidebar>
+    <MainContent></MainContent>
   </div>
 </template>
 
 <script>
+import MainContent from './components/layout/MainContent'
+import Navbar from './components/layout/Navbar'
+import Sidebar from './components/layout/Sidebar'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    MainContent,
+    Navbar,
+    Sidebar
+  }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+@import '~animate.css';
+
+.animated {
+  animation-duration: .377s;
 }
+
+@import '~bulma';
+
+$fa-font-path: '~font-awesome/fonts/';
+@import '~font-awesome/scss/font-awesome';
+
 </style>
