@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/views/Hello'
-import UsersList from '@/components/views/users/UsersList'
+import Hello from '@/components/modules/Hello'
+import UsersList from '@/components/modules/users/UsersList'
+import Login from '@/components/modules/login/Login'
+import store from '../store'
 
 Vue.use(Router)
 
@@ -9,7 +11,7 @@ const VirtualRoute = {
   template: '<router-view></router-view>'
 }
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -37,6 +39,20 @@ export default new Router({
           }
         }
       ]
+    },
+    {
+      path: '/login',
+      component: Login,
+      name: 'login'
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if (!store.getters.isAuthenticated && to.name !== 'login') {
+    return next('/login')
+  }
+  return next()
+})
+
+export default router
