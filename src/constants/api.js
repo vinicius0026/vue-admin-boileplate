@@ -1,8 +1,13 @@
 'use strict'
 
-const apiBasePath = 'http://localhost:8000'
-
 export const auth = {
-  login: () => `${apiBasePath}/login`,
-  logout: () => `${apiBasePath}/logout`
+  login: () => `/login`,
+  logout: () => `$/logout`
 }
+
+export const user = (function () {
+  const base = `/api/users`
+  return {
+    list: () => base
+  }
+})()
