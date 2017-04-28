@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/modules/Hello'
 import UsersList from '@/components/modules/users/UsersList'
+import UserCreate from '@/components/modules/users/UserCreate'
 import Login from '@/components/modules/login/Login'
 import store from '../store'
 
@@ -36,6 +37,15 @@ const router = new Router({
           meta: {
             breadcrumb: 'List',
             title: 'List of Users'
+          }
+        },
+        {
+          name: 'users.create',
+          path: '/create',
+          component: UserCreate,
+          meta: {
+            breadcrumb: 'Create',
+            title: 'Create User'
           }
         }
       ]
