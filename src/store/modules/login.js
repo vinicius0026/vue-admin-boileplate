@@ -25,7 +25,7 @@ const actions = {
   login ({ commit }, credentials) {
     commit(LOGIN)
     loginService.login(credentials)
-      .then(res => commit(LOGIN_SUCCESS, res.data))
+      .then(res => commit(LOGIN_SUCCESS, res.data.data))
       .then(() => router.push({ name: 'hello' }))
   },
   setUser ({ commit }, user) {
