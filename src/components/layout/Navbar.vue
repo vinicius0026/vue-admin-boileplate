@@ -8,7 +8,7 @@
           </a>
         </div>
         <div class="nav-right is-flex">
-          <a href class="nav-item">login</a>
+          <a href class="nav-item" @click="logout">logout</a>
         </div>
       </nav>
     </div>
@@ -16,9 +16,14 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   props: {
     show: Boolean
+  },
+  methods: {
+    ...mapActions(['logout'])
   }
 }
 </script>
