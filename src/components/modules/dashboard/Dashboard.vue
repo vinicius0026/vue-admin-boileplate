@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="Dashboard">
     <h1>{{ msg }}</h1>
     <h3>This is {{ pkginfo.name }}, version {{ pkginfo.version }}</h3>
     <h2>Essential Links</h2>
@@ -25,7 +25,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'hello',
+  name: 'Dashboard',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

@@ -5,7 +5,7 @@
     </p>
     <ul class="menu-list">
       <li>
-        <router-link :to="{ name: 'hello' }">
+        <router-link :to="{ name: 'dashboard' }">
           <span class="icon is-small"><i class="fa fa-dashboard"></i></span>
           Home
         </router-link>

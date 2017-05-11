@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/modules/Hello'
+import Dashboard from '@/components/modules/dashboard/Dashboard'
 import UsersList from '@/components/modules/users/UsersList'
 import UserCreate from '@/components/modules/users/UserCreate'
 import Login from '@/components/modules/login/Login'
@@ -16,10 +16,10 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'hello',
-      component: Hello,
+      name: 'dashboard',
+      component: Dashboard,
       meta: {
-        title: 'Home'
+        title: 'Dashboard'
       }
     },
     {
