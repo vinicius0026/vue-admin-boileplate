@@ -2,7 +2,7 @@
 
 export const auth = {
   login: () => `/login`,
-  logout: () => `$/logout`
+  logout: () => `/logout`
 }
 
 export const user = (function () {
