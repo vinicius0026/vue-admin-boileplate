@@ -25,7 +25,12 @@ const actions = {
   login ({ commit }, credentials) {
     commit(LOGIN)
     loginService.login(credentials)
-      .then(res => commit(LOGIN_SUCCESS, res.data.data))
+      .then(res => res.data.data)
+      .then(user => {
+        commit(LOGIN_SUCCESS, user)
+        return user
+      })
+      .then(user => window.localStorage.setItem('user', JSON.stringify(user)))
       .then(() => router.push({ name: 'dashboard' }))
   },
   setUser ({ commit }, user) {

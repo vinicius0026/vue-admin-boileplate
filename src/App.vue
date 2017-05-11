@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import MainContent from './components/layout/MainContent'
 import Navbar from './components/layout/Navbar'
 import Sidebar from './components/layout/Sidebar'
@@ -25,6 +25,18 @@ export default {
   },
   computed: {
     ...mapGetters(['isAuthenticated'])
+  },
+  methods: {
+    ...mapActions(['setUser'])
+  },
+  created () {
+    let user
+    try {
+      user = JSON.parse(window.localStorage.getItem('user'))
+      this.setUser(user)
+    } catch (e) {
+      console.error(e)
+    }
   }
 }
 </script>
