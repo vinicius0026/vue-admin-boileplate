@@ -41,6 +41,7 @@
 import router from '../../../router'
 import usersService from './usersService'
 import LabelledInput from '../../util/LabelledInput'
+import Toastr from '../../util/Toastr'
 
 export default {
   data () {
@@ -76,6 +77,11 @@ export default {
       usersService.create(user)
         .then(() => {
           router.push({ name: 'users.list' })
+          Toastr.success('User created successfully', 'Success')
+        })
+        .catch(err => {
+          Toastr.error('Something went wrong when creating user', 'Error')
+          console.error(err)
         })
     },
     cancel () {

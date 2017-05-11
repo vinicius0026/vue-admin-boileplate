@@ -35,6 +35,8 @@
 
 <script>
 import usersService from './usersService'
+import Toastr from '../../util/toastr'
+
 export default {
   name: 'users',
   data () {
@@ -46,6 +48,10 @@ export default {
     usersService.list()
       .then(res => {
         this.users = res.data
+      })
+      .catch(err => {
+        Toastr.error('Unable to fetch users', 'Error')
+        console.error(err)
       })
   }
 }
