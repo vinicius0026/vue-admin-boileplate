@@ -41,7 +41,7 @@ const router = new Router({
         },
         {
           name: 'users.create',
-          path: '/create',
+          path: 'create',
           component: UserCreate,
           meta: {
             breadcrumb: 'Create',
