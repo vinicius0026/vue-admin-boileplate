@@ -8,6 +8,7 @@ export const auth = {
 export const user = (function () {
   const base = `/api/users`
   return {
+    create: () => base,
     list: () => base
   }
 })()
