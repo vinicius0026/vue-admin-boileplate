@@ -61,7 +61,7 @@ const mutations = {
 
   [LOGOUT] (state) {
     state.processing = false
-    state.users = null
+    state.user = null
     state.error = null
   }
 }
