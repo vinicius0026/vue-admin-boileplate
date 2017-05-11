@@ -38,6 +38,7 @@ const actions = {
   },
   logout ({ commit }) {
     commit(LOGOUT)
+    window.localStorage.removeItem('user')
     loginService.logout()
   }
 }
