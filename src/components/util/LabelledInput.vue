@@ -5,6 +5,7 @@
       <input class="input"
              :type="type"
              :placeholder="placeholder"
+             :disabled="disabled"
              ref="input"
              v-bind:value="value"
              v-on:input="updateValue($event.target.value)">
@@ -28,6 +29,10 @@ export default {
     placeholder: {
       type: String,
       required: true
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
