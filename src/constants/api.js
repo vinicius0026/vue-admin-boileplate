@@ -9,6 +9,7 @@ export const user = (function () {
   const base = `/api/users`
   return {
     create: () => base,
+    read: (id) => `${base}/${id}`,
     remove: (id) => `${base}/${id}`,
     list: () => base
   }
