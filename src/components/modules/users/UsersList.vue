@@ -26,7 +26,7 @@
               <td>{{ user.id }}</td>
               <td>{{ user.username }}</td>
               <td>{{ user.scope }}</td>
-              <td><a class="delete"></a></td>
+              <td><a class="delete" @click="remove(user.id)"></a></td>
             </tr>
           </tbody>
         </table>
@@ -46,15 +46,31 @@ export default {
       users: []
     }
   },
+  methods: {
+    fetch () {
+      return usersService.list()
+        .then(res => {
+          this.users = res.data
+        })
+        .catch(err => {
+          Toastr.error('Unable to fetch users', 'Error')
+          console.error(err)
+        })
+    },
+    remove (id) {
+      return usersService.remove(id)
+        .then(() => {
+          Toastr.success('User removed successfully', 'Success')
+          this.fetch()
+        })
+        .catch(err => {
+          Toastr.error('Failed to remove user', 'Error')
+          console.error(err)
+        })
+    }
+  },
   created () {
-    usersService.list()
-      .then(res => {
-        this.users = res.data
-      })
-      .catch(err => {
-        Toastr.error('Unable to fetch users', 'Error')
-        console.error(err)
-      })
+    this.fetch()
   }
 }
 </script>
