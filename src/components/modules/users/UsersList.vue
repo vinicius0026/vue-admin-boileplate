@@ -26,7 +26,13 @@
               <td>{{ user.id }}</td>
               <td>{{ user.username }}</td>
               <td>{{ user.scope }}</td>
-              <td><a class="delete" @click="remove(user.id)"></a></td>
+              <td>
+                <Tooltip label="Remove user" placement="top">
+                  <button class="button is-small" @click="remove(user.id)">
+                    <span class="icon is-small"><i class="fa fa-remove"></i></span>
+                  </button>
+                </Tooltip>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -38,6 +44,7 @@
 <script>
 import usersService from './usersService'
 import Toastr from '../../util/Toastr'
+import Tooltip from 'vue-bulma-tooltip'
 
 export default {
   name: 'users',
@@ -71,6 +78,9 @@ export default {
   },
   created () {
     this.fetch()
+  },
+  components: {
+    Tooltip
   }
 }
 </script>
