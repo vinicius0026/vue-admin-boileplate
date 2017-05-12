@@ -37,7 +37,7 @@
 
 <script>
 import usersService from './usersService'
-import Toastr from '../../util/toastr'
+import Toastr from '../../util/Toastr'
 
 export default {
   name: 'users',
