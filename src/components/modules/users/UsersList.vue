@@ -18,6 +18,7 @@
               <th>id</th>
               <th>username</th>
               <th>roles</th>
+              <th>actions</th>
             </tr>
           </thead>
           <tbody>
@@ -25,6 +26,7 @@
               <td>{{ user.id }}</td>
               <td>{{ user.username }}</td>
               <td>{{ user.scope }}</td>
+              <td><a class="delete"></a></td>
             </tr>
           </tbody>
         </table>
