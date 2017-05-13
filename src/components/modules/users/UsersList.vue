@@ -27,8 +27,13 @@
               <td>{{ user.username }}</td>
               <td>{{ user.scope }}</td>
               <td>
+                <Tooltip label="User details" placement="top">
+                  <button class="button is-small" @click="view(user.id)">
+                    <span class="icon is-small"><i class="fa fa-search"></i></span>
+                  </button>
+                </Tooltip>
                 <Tooltip label="Remove user" placement="top">
-                  <button class="button is-small" @click="remove(user.id)">
+                  <button class="button is-small is-danger" @click="remove(user.id)">
                     <span class="icon is-small"><i class="fa fa-remove"></i></span>
                   </button>
                 </Tooltip>
@@ -42,6 +47,7 @@
 </template>
 
 <script>
+import router from '../../../router'
 import usersService from './usersService'
 import Toastr from '../../util/Toastr'
 import Tooltip from 'vue-bulma-tooltip'
@@ -63,6 +69,9 @@ export default {
           Toastr.error('Unable to fetch users', 'Error')
           console.error(err)
         })
+    },
+    view (id) {
+      return router.push({ name: 'users.details', params: { id } })
     },
     remove (id) {
       return usersService.remove(id)
