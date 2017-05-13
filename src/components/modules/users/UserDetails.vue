@@ -87,6 +87,9 @@ export default {
           Toastr.error('Unable to update user', 'Error')
           console.error(err)
         })
+    },
+    cancel () {
+      router.push({ name: 'users.list' })
     }
   },
   created () {
