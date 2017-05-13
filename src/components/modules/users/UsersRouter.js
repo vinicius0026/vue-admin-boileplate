@@ -31,6 +31,15 @@ export default {
         breadcrumb: 'Create',
         title: 'Create User'
       }
+    },
+    {
+      name: 'users.details',
+      path: 'details/:id',
+      component: UserDetails,
+      meta: {
+        breadcrumb: 'Details',
+        title: 'User Details'
+      }
     }
   ]
 }
